@@ -338,6 +338,64 @@ panel(axb, "B")
 fig.subplots_adjust(bottom=0.38, wspace=0.42)
 sv("fig_prospective.pdf", fig)
 
+# ================= Fig: field study (3 panels) =================
+import csv as _csv
+_dev = json.load(open(os.path.join(DATA, "pr_extract", "pr_analysis_dev.json")))
+_val = json.load(open(os.path.join(DATA, "pr_extract", "pr_analysis_val.json")))
+fig, axes = plt.subplots(1, 3, figsize=(7.6, 2.6))
+# A: deadline clustering (time budget class)
+ax = axes[0]
+labels = ["2024", "2025\ndev", "2025\nval", "2026"]
+shares = [_dev["year_2024"]["S1"]["share_last72h"],
+          _dev["dev_2025"]["S1_clustering"]["share_last72h_of_predeadline"],
+          _val["val_2025_FINAL"]["S1_clustering"]["share_last72h_of_predeadline"],
+          _dev["case_2026"]["S1"]["share_last72h"]]
+ax.bar(range(4), shares, color=BLUE, width=0.62)
+ax.axhline(0.27, color=VERM, lw=1.0, ls=(0, (4, 3)))
+ax.axhline(0.135, color=GREY, lw=0.8, ls=(0, (2, 2)))
+ax.set_xlim(-0.6, 4.9)
+ax.text(4.75, 0.285, "registered\nthreshold", fontsize=7, color=VERM,
+        ha="right", va="bottom")
+ax.text(4.75, 0.145, "uniform", fontsize=7, color=GREY, ha="right",
+        va="bottom")
+ax.set_xticks(range(4), labels)
+ax.set_ylabel("last-72 h share of on-time reviews")
+ax.set_ylim(0, 0.8); panel(ax, "A")
+# B: ICLR vs TMLR contrast (design contrast)
+ax = axes[1]
+iclr7 = _dev["iclr2025_all_for_window_contrast"]["max_7day_window_share"]
+tmlr7 = _dev["tmlr"]["max_7day_window_share"]
+# per-paper 3-day construction: registered follow-up computation
+# (frozen construction, ledger 2026-07-22): ICLR 2025 0.354, TMLR 0.068
+x = np.arange(2)
+ax.bar(x - 0.17, [iclr7, 0.354], width=0.30, color=BLUE, label="ICLR 2025")
+ax.bar(x + 0.17, [tmlr7, 0.068], width=0.30, color=ORANGE, label="TMLR")
+ax.set_xticks(x, ["calendar\n7-day window", "per-paper\n3-day window"])
+ax.set_ylabel("sharpest-window share")
+ax.legend(loc="upper right"); ax.set_ylim(0, 0.85); panel(ax, "B")
+# C: device accumulation by category (compensation accounting)
+ax = axes[2]
+rows_ = list(_csv.DictReader(open(os.path.join(DATA, "h4_devices_en.csv"))))
+years = list(range(2017, 2027))
+cats = ["feedback", "monitoring", "admission control", "sanction", "automation"]
+cols = {"feedback": SKY, "monitoring": BLUE, "admission control": ORANGE,
+        "sanction": VERM, "automation": PURPLE}
+counts = {c: [] for c in cats}
+for y in years:
+    for c in cats:
+        n = sum(1 for r in rows_ if r["category"] == c
+                and int(r["first_year"]) <= y
+                and (not r["discontinued_after"] or int(r["discontinued_after"]) >= y))
+        counts[c].append(n)
+ax.stackplot(years, [counts[c] for c in cats],
+             labels=cats, colors=[cols[c] for c in cats], alpha=0.85, lw=0)
+ax.set_xlabel("year"); ax.set_ylabel("active devices")
+ax.set_xticks([2017, 2020, 2023, 2026])
+ax.legend(loc="upper left", fontsize=6.5, handlelength=1.0,
+          labelspacing=0.25)
+panel(ax, "C")
+fig.tight_layout(w_pad=1.6); sv("fig_field.pdf", fig)
+
 # ================= Fig 8: framework schematic =================
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 fig, ax = plt.subplots(figsize=(7.2, 3.4))

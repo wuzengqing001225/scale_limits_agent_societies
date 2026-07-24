@@ -63,7 +63,13 @@ _labels = {
  "anchor_N8_le_0.2": r"Anchor: give $\le 0.2$ at $N=8$",
  "anchor_N1000_ge_0.8": r"Anchor: give $\ge 0.8$ at $N=1000$",
  "mid_N40_pred_0.396_pm_0.20": r"Interior: $0.396 \pm 0.20$ at $N=40$",
- "mid_N200_pred_0.682_pm_0.20": r"Interior: $0.682 \pm 0.20$ at $N=200$"}
+ "mid_N200_pred_0.682_pm_0.20": r"Interior: $0.682 \pm 0.20$ at $N=200$",
+ "divergence_rise_ge_0.4": r"Give-rate rise of at least $0.4$ across the tested range",
+ "T_flat_spread_lt_0.15": r"Flatness: report-cell give-rate spread $< 0.15$",
+ "Delta_flat_spread_lt_0.15": r"Flatness: spread of differences from same-run baselines $< 0.15$",
+ "Delta_positive_all_N": r"Sanction direction: baseline-minus-report difference positive at every $N$",
+ "flat_change_le_0.15": r"Flatness: end-to-end give-rate change $\le 0.15$",
+}
 d_r = json.load(open(f"{D}/div1_reasoner_summary.json"))["sealed_verdicts"]
 d_s = json.load(open(f"{D}/div1_sonnet_summary.json"))["sealed_verdicts"]
 _allk = list(dict.fromkeys(list(d_r.keys()) + list(d_s.keys())))
