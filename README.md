@@ -1,4 +1,4 @@
-# scale-audit
+# Predicting the scale limits of social mechanisms in agent societies
 
 Code and data for "Predicting the scale limits of social mechanisms in agent societies".
 
