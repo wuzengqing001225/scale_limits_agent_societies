@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "..", "data")
-FIGS = os.path.join(HERE, "..", "..", "paper", "figs")
+FIGS = os.path.join(HERE, "..", "..", "paper", "latex", "figs")
 os.makedirs(FIGS, exist_ok=True)
 
 # ---- Wong palette ----
@@ -20,18 +20,18 @@ BLUE, VERM, GREEN, ORANGE, PURPLE, SKY, GREY = \
 plt.rcParams.update({
     "font.family": "sans-serif",
     "font.sans-serif": ["Helvetica", "Arial", "DejaVu Sans"],
-    "font.size": 8, "axes.labelsize": 8, "axes.titlesize": 8,
-    "xtick.labelsize": 7, "ytick.labelsize": 7, "legend.fontsize": 6.5,
-    "axes.linewidth": 0.6, "lines.linewidth": 1.2, "lines.markersize": 3.6,
+    "font.size": 10, "axes.labelsize": 10, "axes.titlesize": 10,
+    "xtick.labelsize": 9, "ytick.labelsize": 9, "legend.fontsize": 8.5,
+    "axes.linewidth": 0.7, "lines.linewidth": 1.4, "lines.markersize": 4.2,
     "xtick.direction": "out", "ytick.direction": "out",
-    "xtick.major.width": 0.6, "ytick.major.width": 0.6,
-    "xtick.major.size": 2.5, "ytick.major.size": 2.5,
+    "xtick.major.width": 0.7, "ytick.major.width": 0.7,
+    "xtick.major.size": 3.0, "ytick.major.size": 3.0,
     "axes.spines.top": False, "axes.spines.right": False,
     "legend.frameon": False, "pdf.fonttype": 42, "figure.dpi": 200,
 })
 
 def panel(ax, letter, dx=-0.16, dy=1.04):
-    ax.text(dx, dy, letter, transform=ax.transAxes, fontsize=10,
+    ax.text(dx, dy, letter, transform=ax.transAxes, fontsize=12,
             fontweight="bold", va="bottom", ha="left")
 
 def J(name): return json.load(open(os.path.join(DATA, name)))
@@ -46,7 +46,7 @@ def dd(dct):  # {"10": v} -> (Ns, vals) sorted
 
 # ================= Fig 1: anchor pairs =================
 A = J("anchors_data.json")
-fig, axes = plt.subplots(1, 3, figsize=(7.0, 2.15))
+fig, axes = plt.subplots(1, 3, figsize=(7.6, 2.5))
 ax = axes[0]
 x, y = dd(A["A_direct"]); ax.semilogx(x, y, "o-", color=VERM, label="direct reciprocity")
 x, y = dd(A["A_network"]); ax.semilogx(x, y, "s-", color=BLUE, label="network reciprocity")
@@ -61,15 +61,54 @@ ax = axes[2]
 x, y = dd(A["C"]["herd"]); ax.semilogx(x, y, "o-", color=VERM, label="sequential influence")
 x, y = dd(A["C"]["indep"]); ax.semilogx(x, y, "s-", color=BLUE, label="independent votes")
 ax.axhline(0.692, color=GREY, lw=0.7, ls=(0, (4, 3)))
-ax.text(12, 0.705, "analytic plateau", fontsize=6, color=GREY)
+ax.text(12, 0.705, "analytic plateau", fontsize=8, color=GREY)
 ax.set_xlabel(r"$N$"); ax.set_ylabel("aggregation accuracy"); ax.set_ylim(0.6, 1.03)
 ax.legend(loc="center right"); panel(ax, "C")
 fig.tight_layout(w_pad=1.4); sv("fig_anchors.pdf", fig)
 
+# ================= Fig: rule-based single terms (5 panels) =================
+r4 = J("r4_results.json"); r6 = J("r6_results.json")
+fig, axes = plt.subplots(2, 3, figsize=(7.6, 5.0))
+ax = axes[0, 0]
+x, y = dd(A["A_direct"]); ax.semilogx(x, y, "o-", color=VERM, label="direct reciprocity")
+x, y = dd(A["A_network"]); ax.semilogx(x, y, "s-", color=BLUE, label="network reciprocity")
+ax.set_xlabel(r"$N$"); ax.set_ylabel("cooperator share"); ax.set_ylim(-0.05, 1.08)
+ax.legend(loc="center right"); panel(ax, "A")
+ax = axes[0, 1]
+x, y = dd(A["B_local"]); ax.semilogx(x, y, "o-", color=VERM, label="local sampling")
+x, y = dd(A["B_global"]); ax.semilogx(x, y, "s-", color=BLUE, label="global sampling")
+ax.set_xlabel(r"$N$"); ax.set_ylabel("consensus rate"); ax.set_ylim(-0.05, 1.08)
+ax.legend(loc="center right"); panel(ax, "B")
+ax = axes[0, 2]
+x, y = dd(A["C"]["herd"]); ax.semilogx(x, y, "o-", color=VERM, label="sequential influence")
+x, y = dd(A["C"]["indep"]); ax.semilogx(x, y, "s-", color=BLUE, label="independent votes")
+ax.axhline(0.692, color=GREY, lw=0.7, ls=(0, (4, 3)))
+ax.text(12, 0.705, "analytic plateau", fontsize=8, color=GREY)
+ax.set_xlabel(r"$N$"); ax.set_ylabel("aggregation accuracy"); ax.set_ylim(0.6, 1.03)
+ax.legend(loc="center right"); panel(ax, "C")
+ax = axes[1, 0]
+for var, c, mk, lab in [("diluted", VERM, "o", r"update step $\propto 1/N$"),
+                        ("normalized", BLUE, "s", "per-event update")]:
+    rows_ = sorted((r for r in r4["rows"] if r["variant"] == var), key=lambda r: r["N"])
+    ax.semilogx([r["N"] for r in rows_], [r["lift"] for r in rows_], mk + "-", color=c, label=lab)
+ax.axhline(0, color=GREY, lw=0.5)
+ax.set_xlabel(r"$N$"); ax.set_ylabel("effect size"); ax.legend(loc="center right")
+panel(ax, "D")
+ax = axes[1, 1]
+for arm, c, mk, lab in [("organic", VERM, "o", "organic transmission"),
+                        ("board", BLUE, "s", "public record")]:
+    rows_ = sorted((r for r in r6["rows"] if r["arm"] == arm), key=lambda r: r["N"])
+    ax.semilogx([r["N"] for r in rows_], [r["lift"] for r in rows_], mk + "-", color=c, label=lab)
+ax.axhline(0, color=GREY, lw=0.5)
+ax.set_xlabel(r"$N$"); ax.set_ylabel("effect size"); ax.legend(loc="center right")
+panel(ax, "E")
+axes[1, 2].axis("off")
+fig.tight_layout(w_pad=1.4, h_pad=1.6); sv("fig_rule.pdf", fig)
+
 # ================= Fig 2: exponent =================
 r3 = J("r3_results.json"); r3p = J("r3_prime_results.json")
 ci = J("r3_prime_reinforced.json")["theta_0.3"]["boot_CI95"]
-fig, axes = plt.subplots(1, 2, figsize=(4.7, 2.25), sharey=True)
+fig, axes = plt.subplots(1, 2, figsize=(5.4, 2.6), sharey=True)
 for ax, res, key, letter, note in [
         (axes[0], r3, "N_half", "A", "bounded memory"),
         (axes[1], r3p, "N_03", "B", "memory bound removed")]:
@@ -81,19 +120,19 @@ for ax, res, key, letter, note in [
     ax.loglog(xs, np.exp(a) * xs**b, "-", color=BLUE, lw=1.0, zorder=1)
     ax.loglog(x, y, "o", color=BLUE, mfc="white", mew=1.1, zorder=2)
     ax.set_xlabel(r"$f\,\tau$")
-    ax.text(0.05, 0.97, note, transform=ax.transAxes, va="top", fontsize=7, color=GREY)
+    ax.text(0.05, 0.97, note, transform=ax.transAxes, va="top", fontsize=9, color=GREY)
     slope = res["primary_fit"]["slope"]
     txt = f"slope $= {slope:.3f}$"
     if letter == "B":
         txt += f"\n95% CI $[{ci[0]:.3f},\\,{ci[1]:.3f}]$"
-    ax.text(0.05, 0.86, txt, transform=ax.transAxes, va="top", fontsize=7)
+    ax.text(0.05, 0.84, txt, transform=ax.transAxes, va="top", fontsize=9)
     panel(ax, letter)
 axes[0].set_ylabel(r"crossover scale $N_c$")
 fig.tight_layout(w_pad=1.2); sv("fig_exponent.pdf", fig)
 
 # ================= Fig 3: single-term flips =================
 r4 = J("r4_results.json"); r6 = J("r6_results.json")
-fig, axes = plt.subplots(1, 2, figsize=(4.7, 2.25), sharey=True)
+fig, axes = plt.subplots(1, 2, figsize=(5.4, 2.6), sharey=True)
 ax = axes[0]
 for var, c, mk, lab in [("diluted", VERM, "o", r"update step $\propto 1/N$"),
                         ("normalized", BLUE, "s", "per-event update")]:
@@ -114,7 +153,7 @@ fig.tight_layout(w_pad=1.2); sv("fig_flips.pdf", fig)
 
 # ================= Fig 4: R5 paths =================
 r5 = J("r5_results.json"); Ns = [10, 100, 1000]
-fig, axes = plt.subplots(1, 2, figsize=(4.7, 2.25))
+fig, axes = plt.subplots(1, 2, figsize=(5.4, 2.6))
 ax = axes[0]
 ax.semilogx(Ns, [r5["coverage_global"][str(n)] for n in Ns], "o-", color=VERM, label="global routing")
 ax.semilogx(Ns, [r5["coverage_local"][str(n)] for n in Ns], "s-", color=BLUE, label="local routing")
@@ -129,29 +168,77 @@ ax.set_xlabel(r"$N$"); ax.set_ylabel("effect size")
 ax.legend(loc="upper right"); panel(ax, "B")
 fig.tight_layout(w_pad=1.4); sv("fig_r5.pdf", fig)
 
-# ================= Fig 5: dose lattice =================
-rows = JL("p6_main_raw.jsonl")
-ks = [0, 1, 5, 25]; Nss = [40, 200, 1000]
-M = np.full((4, 3), np.nan)
-for i, k in enumerate(ks):
-    for j, n in enumerate(Nss):
-        sel = [r for r in rows if r["k"] == k and r["N"] == n and r["action"] in ("give", "keep")]
-        if sel: M[i, j] = np.mean([r["action"] == "give" for r in sel])
-fig, ax = plt.subplots(figsize=(3.0, 2.55))
-im = ax.imshow(M, cmap="viridis", vmin=0.4, vmax=1.0, aspect="auto")
-ax.set_xticks(range(3), [str(n) for n in Nss])
-ax.set_yticks(range(4), ["0 (baseline)", "1", "5", "25"])
-ax.set_xlabel(r"stated population size $N$")
-ax.set_ylabel(r"number of reports $k$")
-for i in range(4):
-    for j in range(3):
-        col = "black" if M[i, j] > 0.78 else "white"
-        ax.text(j, i, f"{M[i,j]:.2f}", ha="center", va="center", fontsize=7, color=col)
-ax.text(1.0, -0.78, r"$\beta_{\log k}=+0.48\;(z=3.17)\quad\beta_{\log N}=0.00\;(z=0.00)$",
-        ha="center", fontsize=6.5)
-cb = fig.colorbar(im, shrink=0.85, pad=0.03); cb.set_label("give rate", fontsize=7)
-cb.ax.tick_params(labelsize=6.5); cb.outline.set_linewidth(0.5)
-fig.tight_layout(); sv("fig_dose.pdf", fig)
+# ================= Fig 5: dose lattices + baseline-adjusted CIs =========
+def lattice(path):
+    rws = JL(path)
+    best = {}
+    for r in rws:
+        if r.get("_header"): continue
+        best[(r["k"], r["N"], r["i"])] = r
+    ks_, Nss_ = [0, 1, 5, 25], [40, 200, 1000]
+    Mx = np.full((4, 3), np.nan)
+    for i, k in enumerate(ks_):
+        for j, n in enumerate(Nss_):
+            sel = [r for r in best.values()
+                   if r["k"] == k and r["N"] == n and r["action"] in ("give", "keep")]
+            if sel: Mx[i, j] = np.mean([r["action"] == "give" for r in sel])
+    return Mx
+
+def heat(ax, Mx, letter, title):
+    im = ax.imshow(Mx, cmap="viridis", vmin=0.0, vmax=1.0, aspect="auto")
+    ax.set_xticks(range(3), ["40", "200", "1000"])
+    ax.set_yticks(range(4), ["0 (base)", "1", "5", "25"])
+    ax.set_xlabel(r"stated population size $N$")
+    ax.set_ylabel(r"reports $k$")
+    for i in range(4):
+        for j in range(3):
+            col = "black" if Mx[i, j] > 0.6 else "white"
+            ax.text(j, i, f"{Mx[i,j]:.2f}", ha="center", va="center",
+                    fontsize=8.5, color=col)
+    ax.set_title(title, fontsize=9, pad=4)
+    panel(ax, letter, dx=-0.28)
+    return im
+
+fig = plt.figure(figsize=(7.4, 6.2))
+gs = fig.add_gridspec(2, 3, width_ratios=[1, 1, 0.05],
+                      wspace=0.55, hspace=0.55,
+                      left=0.11, right=0.90, top=0.93, bottom=0.10)
+axA = fig.add_subplot(gs[0, 0]); axB = fig.add_subplot(gs[0, 1])
+axC = fig.add_subplot(gs[1, 0]); axD = fig.add_subplot(gs[1, 1])
+cax = fig.add_subplot(gs[:, 2])
+im = heat(axA, lattice("p6_main_raw.jsonl"), "A", "count, claude-sonnet")
+heat(axB, lattice("div1b_sonnet_raw.jsonl"), "B", "percentage, claude-sonnet")
+heat(axC, lattice("div1b_reasoner_raw.jsonl"), "C",
+     "percentage, deepseek-reasoner")
+cb = fig.colorbar(im, cax=cax)
+cb.set_label("give rate", fontsize=9); cb.ax.tick_params(labelsize=8.5)
+cb.outline.set_linewidth(0.5)
+# Panel D: baseline-adjusted report x logN interaction, 95% CI
+G = J("baseline_glm_results.json")
+order = [("p6_main", "sonnet", BLUE),
+         ("p6c_reasoner", "reasoner", BLUE),
+         ("p6c_gemini", "gemini (F)", BLUE),
+         ("p6c_gpt55", "gpt-5.5", BLUE),
+         ("div1b_reasoner", "reasoner", VERM),
+         ("div1b_sonnet", "sonnet (F)", VERM)]
+yp = np.arange(len(order))[::-1]
+seen = set()
+for (key, lab, c), yy in zip(order, yp):
+    ci = G[key]["interaction_R_logN"]["CI95"]
+    b = G[key]["interaction_R_logN"]["b"]
+    leg = {BLUE: "count format", VERM: "percentage format"}[c]
+    axD.plot(ci, [yy, yy], color=c, lw=1.6, solid_capstyle="butt",
+             label=leg if c not in seen else None)
+    seen.add(c)
+    axD.plot(b, yy, "o", color=c, mfc="white", mew=1.2, ms=4.5)
+axD.axvline(0, color=GREY, lw=0.7, ls=(0, (4, 3)))
+axD.set_yticks(yp, [lab for _, lab, _ in order])
+axD.tick_params(axis="y", labelsize=8)
+axD.set_xlabel(r"report $\times \log N$ interaction (95% CI)")
+axD.set_title("baseline-adjusted models", fontsize=9, pad=4)
+axD.legend(loc="lower left", fontsize=7.5, handlelength=1.2)
+panel(axD, "D", dx=-0.34)
+sv("fig_dose.pdf", fig)
 
 # ================= Fig 6: probe matrix =================
 def rates_from(path, dedupe):
@@ -190,7 +277,7 @@ gpt_n = rates_n_from("p4_codex_gpt-5.5_raw.jsonl", ("cell", "variant", "i"))
 models = [("claude-sonnet-4-6", son_n, BLUE, "o"),
           ("claude-opus (alias)", opu_n, VERM, "s"),
           ("gpt-5.5", gpt_n, GREEN, "D")]
-fig, ax = plt.subplots(figsize=(3.6, 2.8))
+fig, ax = plt.subplots(figsize=(4.0, 3.2))
 ypos = np.arange(len(cells6))[::-1]
 off = {0: 0.22, 1: 0.0, 2: -0.22}
 for j, (name, dct, col, mk) in enumerate(models):
@@ -210,14 +297,14 @@ sv("fig_probes.pdf", fig)
 
 # ================= Fig 7: prospective (two panels: axelrod + DIV-1) =====
 r7 = J("r7_results.json")
-fig, (ax, axb) = plt.subplots(1, 2, figsize=(6.4, 2.6),
+fig, (ax, axb) = plt.subplots(1, 2, figsize=(7.2, 3.0),
                               gridspec_kw={"width_ratios": [1.15, 1]})
 styles = {("II_Grudger", "G"): (BLUE, "o", "-", "pool II, per-capita budget"),
           ("II_Grudger", "S"): (BLUE, "o", (0, (4, 2.5)), "pool II, fixed match length"),
           ("I_WSLS", "G"): (VERM, "s", "-", "pool I, per-capita budget"),
           ("I_WSLS", "S"): (VERM, "s", (0, (4, 2.5)), "pool I, fixed match length")}
 ax.axvspan(24, 48, color="#dfe8f3", alpha=0.9, lw=0, zorder=0)
-ax.text(34, 1.05, "predicted\nflip window", fontsize=6, ha="center", color=GREY)
+ax.text(34, 1.05, "predicted\nflip window", fontsize=9, ha="center", color="#333333")
 for (pool, arm), (c, mk, ls, lab) in styles.items():
     rows = sorted((r for r in r7["rows"] if r["pool"] == pool and r["arm"] == arm),
                   key=lambda r: r["N"])
@@ -241,7 +328,7 @@ for n, pred in ((40, 0.396), (200, 0.682)):
     axb.plot([n, n], [pred-0.20, pred+0.20], color=BLUE, lw=3.5, alpha=0.25,
              solid_capstyle="butt", zorder=0)
     axb.plot(n, pred, "_", color=BLUE, ms=8, mew=1.4, zorder=1)
-axb.text(90, 0.13, "sealed interior\npredictions $\\pm0.20$", fontsize=6,
+axb.text(90, 0.13, "sealed interior\npredictions $\\pm0.20$", fontsize=8.5,
          color=BLUE, ha="center")
 axb.set_xlabel(r"stated population size $N$")
 axb.set_ylabel("give rate"); axb.set_ylim(-0.05, 1.08)
@@ -253,9 +340,9 @@ sv("fig_prospective.pdf", fig)
 
 # ================= Fig 8: framework schematic =================
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
-fig, ax = plt.subplots(figsize=(6.6, 3.0))
+fig, ax = plt.subplots(figsize=(7.2, 3.4))
 ax.set_xlim(0, 10); ax.set_ylim(0, 6); ax.axis("off")
-def box(x, y, w, h, text, fc="#eef3fb", ec=BLUE, fs=6.4):
+def box(x, y, w, h, text, fc="#eef3fb", ec=BLUE, fs=8):
     ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.12",
                                 fc=fc, ec=ec, lw=0.9))
     ax.text(x+w/2, y+h/2, text, ha="center", va="center", fontsize=fs)
@@ -271,7 +358,7 @@ box(7.2, 1.7, 2.6, 1.3, "Aggregate $E(N)$ only if\nevery gain identified,\nelse 
 arrow(3.1, 5.0, 4.2, 3.6); arrow(3.1, 3.05, 4.0, 3.05); arrow(3.1, 1.1, 4.2, 2.4)
 arrow(6.3, 3.3, 7.2, 4.1); arrow(6.3, 2.9, 7.2, 2.3)
 ax.text(5.1, 0.55, "closed checklist fixed in advance; out-of-checklist explanation = audit failure;\npredictions logged before results, failures reported",
-        ha="center", fontsize=6.2, color="#444")
+        ha="center", fontsize=7.5, color="#333")
 sv("fig_framework.pdf", fig)
 
 print("done:", sorted(os.listdir(FIGS)))
