@@ -1,0 +1,40 @@
+{
+ "experiment": "P5c_crossarch",
+ "engine": "deepseek-chat",
+ "model_requested": "deepseek-chat",
+ "models_resolved": [
+  "deepseek-v4-flash"
+ ],
+ "rates": {
+  "P1_B": {
+   "give": 1.0,
+   "n": 24
+  },
+  "P1_T": {
+   "give": 1.0,
+   "n": 24
+  },
+  "P1_X": {
+   "give": 0.958,
+   "n": 24
+  },
+  "P2_count_1000": {
+   "give": 0.25,
+   "n": 24
+  },
+  "P2_prop_1000": {
+   "give": 0.958,
+   "n": 24
+  },
+  "P2_prop_8": {
+   "give": 0.833,
+   "n": 24
+  }
+ },
+ "invalid": 0,
+ "classification": {
+  "conditional_structure": false,
+  "proportion_type": "discount"
+ },
+ "registered_readings": "see \u5b9e\u9a8c\u8ba1\u5212.md \u00a710 P5c (1)-(4)"
+}

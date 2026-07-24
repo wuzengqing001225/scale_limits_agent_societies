@@ -1,0 +1,17 @@
+{
+ "venue": "iclr2024",
+ "t": "2026-07-21T17:14:53.242139+00:00",
+ "submissions_jsonl": 7404,
+ "reviews_jsonl": 28028,
+ "edit_records_jsonl": 35150,
+ "forums_done": 7404,
+ "reviews_edits_done": 28028,
+ "anchors": {},
+ "status_counts": {
+  "rejected_public": 3431,
+  "accepted": 2260,
+  "desk_rejected": 53,
+  "withdrawn": 1660,
+  "unique_roots": 7404
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "experiment": "P4_P5_paraphrase_crossmodel",
+ "model": "gpt-5.5",
+ "engine": "codex",
+ "rates": {
+  "P1_B_V1": 0.917,
+  "P1_T_V1": 0.0,
+  "P1_X_V1": 0.958,
+  "P2_count_1000_V1": 0.0,
+  "P2_prop_1000_V1": 0.167,
+  "P2_prop_8_V1": 0.0
+ },
+ "invalid_by_cell": {},
+ "verdicts": {
+  "P1_T": {
+   "variants_pass": 1,
+   "variants_run": 1,
+   "P4_pass_ge4of5": null
+  },
+  "P1_B": {
+   "variants_pass": 1,
+   "variants_run": 1,
+   "P4_pass_ge4of5": null
+  },
+  "P1_X": {
+   "variants_pass": 1,
+   "variants_run": 1,
+   "P4_pass_ge4of5": null
+  },
+  "P2_count_1000": {
+   "variants_pass": 1,
+   "variants_run": 1,
+   "P4_pass_ge4of5": null
+  },
+  "P2_prop_8": {
+   "variants_pass": 0,
+   "variants_run": 1,
+   "P4_pass_ge4of5": null
+  }
+ }
+}

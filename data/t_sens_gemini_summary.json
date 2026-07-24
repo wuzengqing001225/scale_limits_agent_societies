@@ -1,0 +1,66 @@
+{
+ "experiment": "T_sensitivity",
+ "engine": "gemini",
+ "model_requested": "gemini-3.5-flash",
+ "models_resolved": [
+  "gemini-3.5-flash"
+ ],
+ "rates": {
+  "P1_B_t0.0": {
+   "give": 1.0,
+   "n": 24
+  },
+  "P1_B_t0.7": {
+   "give": 1.0,
+   "n": 24
+  },
+  "P1_B_t1.0": {
+   "give": 1.0,
+   "n": 24
+  },
+  "P1_T_t0.0": {
+   "give": 0.0,
+   "n": 24
+  },
+  "P1_T_t0.7": {
+   "give": 0.0,
+   "n": 24
+  },
+  "P1_T_t1.0": {
+   "give": 0.0,
+   "n": 24
+  },
+  "P2_count_1000_t0.0": {
+   "give": 0.0,
+   "n": 24
+  },
+  "P2_count_1000_t0.7": {
+   "give": 0.0,
+   "n": 24
+  },
+  "P2_count_1000_t1.0": {
+   "give": 0.0,
+   "n": 24
+  }
+ },
+ "verdict": {
+  "t0.0": {
+   "baseline_give": 1.0,
+   "targeted_give": 0.0,
+   "count1000_give": 0.0,
+   "direction_preserved": true
+  },
+  "t0.7": {
+   "baseline_give": 1.0,
+   "targeted_give": 0.0,
+   "count1000_give": 0.0,
+   "direction_preserved": true
+  },
+  "t1.0": {
+   "baseline_give": 1.0,
+   "targeted_give": 0.0,
+   "count1000_give": 0.0,
+   "direction_preserved": true
+  }
+ }
+}

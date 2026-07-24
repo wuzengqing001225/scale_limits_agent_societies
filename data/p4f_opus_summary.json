@@ -1,0 +1,23 @@
+{
+ "experiment": "P4F_factor_separation",
+ "model": "opus",
+ "cells": {
+  "F_CA": {
+   "give": 0.708,
+   "n": 24
+  },
+  "F_CN": {
+   "give": 0.958,
+   "n": 24
+  },
+  "F_RA": {
+   "give": 0.667,
+   "n": 24
+  },
+  "F_RN": {
+   "give": 1.0,
+   "n": 24
+  }
+ },
+ "registered_readings": "see \u5b9e\u9a8c\u8ba1\u5212.md \u00a710 (a)-(d) / opus arm (i)-(iii)"
+}

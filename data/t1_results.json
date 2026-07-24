@@ -1,0 +1,59 @@
+{
+ "experiment": "T1_axelrod_transfer",
+ "library": "axelrod 4.13.1",
+ "B": 50,
+ "rows": [
+  {
+   "N": 6,
+   "turns_G": 10,
+   "delta_G": 0.5,
+   "delta_S": 0.5,
+   "pred_sign_G": 1,
+   "coop_pool_G": 0.62,
+   "coop_pool_S": 0.62
+  },
+  {
+   "N": 10,
+   "turns_G": 6,
+   "delta_G": 0.4259,
+   "delta_S": 0.6111,
+   "pred_sign_G": 1,
+   "coop_pool_G": 0.6426,
+   "coop_pool_S": 0.6326
+  },
+  {
+   "N": 20,
+   "turns_G": 3,
+   "delta_G": 0.0702,
+   "delta_S": 0.6842,
+   "pred_sign_G": 1,
+   "coop_pool_G": 0.6392,
+   "coop_pool_S": 0.6018
+  },
+  {
+   "N": 40,
+   "turns_G": 1,
+   "delta_G": -1.5897,
+   "delta_S": 0.7179,
+   "pred_sign_G": -1,
+   "coop_pool_G": 0.7538,
+   "coop_pool_S": 0.6375
+  },
+  {
+   "N": 80,
+   "turns_G": 1,
+   "delta_G": -1.5443,
+   "delta_S": 0.7342,
+   "pred_sign_G": -1,
+   "coop_pool_G": 0.7468,
+   "coop_pool_S": 0.6295
+  }
+ ],
+ "T1_P1_pass": true,
+ "T1_P1_matches_analytic": true,
+ "T1_P2_pass": true,
+ "T1_P3_direction": {
+  "G_falls": false,
+  "S_flat": true
+ }
+}

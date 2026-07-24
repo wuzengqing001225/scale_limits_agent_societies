@@ -1,0 +1,59 @@
+{
+ "experiment": "P4_P5_paraphrase_crossmodel",
+ "model": "sonnet",
+ "engine": "claude",
+ "rates": {
+  "P1_B_V1": 1.0,
+  "P1_B_V2": 1.0,
+  "P1_B_V3": 1.0,
+  "P1_B_V4": 1.0,
+  "P1_B_V5": 1.0,
+  "P1_T_V1": 0.0,
+  "P1_T_V2": 0.125,
+  "P1_T_V3": 0.0,
+  "P1_T_V4": 0.0,
+  "P1_T_V5": 0.0,
+  "P1_X_V1": 1.0,
+  "P1_X_V2": 1.0,
+  "P1_X_V3": 1.0,
+  "P1_X_V4": 1.0,
+  "P1_X_V5": 1.0,
+  "P2_count_1000_V1": 0.0,
+  "P2_count_1000_V2": 0.0,
+  "P2_count_1000_V3": 0.0,
+  "P2_count_1000_V4": 0.0,
+  "P2_count_1000_V5": 0.0,
+  "P2_prop_8_V1": 0.958,
+  "P2_prop_8_V2": 1.0,
+  "P2_prop_8_V3": 0.875,
+  "P2_prop_8_V4": 0.0,
+  "P2_prop_8_V5": 0.917
+ },
+ "verdicts": {
+  "P1_T": {
+   "variants_pass": 5,
+   "variants_run": 5,
+   "P4_pass_ge4of5": true
+  },
+  "P1_B": {
+   "variants_pass": 5,
+   "variants_run": 5,
+   "P4_pass_ge4of5": true
+  },
+  "P1_X": {
+   "variants_pass": 5,
+   "variants_run": 5,
+   "P4_pass_ge4of5": true
+  },
+  "P2_count_1000": {
+   "variants_pass": 5,
+   "variants_run": 5,
+   "P4_pass_ge4of5": true
+  },
+  "P2_prop_8": {
+   "variants_pass": 4,
+   "variants_run": 5,
+   "P4_pass_ge4of5": true
+  }
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "seed": 20260719,
+ "dev": [
+  "alignment, fairness, safety, privacy, and societal considerations",
+  "applications to computer vision, audio, language, and other modalities",
+  "applications to physical sciences (physics, chemistry, biology, etc.)",
+  "applications to robotics, autonomy, planning",
+  "generative models",
+  "learning theory",
+  "optimization",
+  "other topics in machine learning (i.e., none of the above)",
+  "reinforcement learning",
+  "unsupervised, self-supervised, semi-supervised, and supervised representation learning"
+ ],
+ "val": [
+  "applications to neuroscience & cognitive science",
+  "causal reasoning",
+  "datasets and benchmarks",
+  "foundation or frontier models, including LLMs",
+  "infrastructure, software libraries, hardware, systems, etc.",
+  "interpretability and explainable AI",
+  "learning on graphs and other geometries & topologies",
+  "learning on time series and dynamical systems",
+  "neurosymbolic & hybrid AI systems (physics-informed, logic & formal reasoning, etc.)",
+  "probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.)",
+  "transfer learning, meta learning, and lifelong learning"
+ ]
+}

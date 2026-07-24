@@ -1,0 +1,51 @@
+{
+ "experiment": "R4_dilution",
+ "rows": [
+  {
+   "N": 10,
+   "variant": "diluted",
+   "base": 0.6423,
+   "give": 0.2088,
+   "lift": -0.4335
+  },
+  {
+   "N": 10,
+   "variant": "normalized",
+   "base": 0.6423,
+   "give": 0.2037,
+   "lift": -0.4386
+  },
+  {
+   "N": 100,
+   "variant": "diluted",
+   "base": 0.6585,
+   "give": 0.6592,
+   "lift": 0.0007
+  },
+  {
+   "N": 100,
+   "variant": "normalized",
+   "base": 0.6585,
+   "give": 0.2028,
+   "lift": -0.4557
+  },
+  {
+   "N": 1000,
+   "variant": "diluted",
+   "base": 0.653,
+   "give": 0.6531,
+   "lift": 0.0001
+  },
+  {
+   "N": 1000,
+   "variant": "normalized",
+   "base": 0.653,
+   "give": 0.2032,
+   "lift": -0.4498
+  }
+ ],
+ "diluted_delta_10_1000": 0.4336,
+ "normalized_max_delta": 0.0171,
+ "R4_P1_pass": true,
+ "R4_P2_pass": true
+}

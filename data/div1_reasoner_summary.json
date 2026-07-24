@@ -1,0 +1,53 @@
+{
+ "experiment": "DIV1_divergence",
+ "engine": "reasoner",
+ "rates": {
+  "B_N8": {
+   "give": 0.833,
+   "n": 24
+  },
+  "B_N40": {
+   "give": 0.833,
+   "n": 24
+  },
+  "B_N200": {
+   "give": 0.792,
+   "n": 24
+  },
+  "B_N1000": {
+   "give": 0.75,
+   "n": 24
+  },
+  "T_N8": {
+   "give": 0.0,
+   "n": 24
+  },
+  "T_N40": {
+   "give": 0.5,
+   "n": 24
+  },
+  "T_N200": {
+   "give": 0.708,
+   "n": 24
+  },
+  "T_N1000": {
+   "give": 0.875,
+   "n": 24
+  }
+ },
+ "Delta_by_N": {
+  "N8": 0.833,
+  "N40": 0.333,
+  "N200": 0.083,
+  "N1000": -0.125
+ },
+ "sealed_verdicts": {
+  "monotone_rank": true,
+  "anchor_N8_le_0.2": true,
+  "anchor_N1000_ge_0.8": true,
+  "mid_N40_pred_0.396_pm_0.20": true,
+  "mid_N200_pred_0.682_pm_0.20": true,
+  "divergence_rise_ge_0.4": true
+ },
+ "registration": "\u5b9e\u9a8c\u8ba1\u5212.md DIV-1 (2026-07-20)"
+}

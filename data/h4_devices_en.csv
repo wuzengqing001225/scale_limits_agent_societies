@@ -1,0 +1,51 @@
+id,device,category,first_year,discontinued_after,documented_years,source
+1,Dual submission ban,admission control,2017,,2017;2018;2021;2022;2024,"CFP, multiple years"
+2,Strict deadline enforcement,admission control,2017,,2017,CFP2017
+3,Double-blind review,admission control,2018,,2018;2019;2020;2022;2023;2024,"CFP, multiple years"
+4,Hard page limit (over-length desk reject from 2025),admission control,2019,,2019;2020;2021;2024;2025;2026,"CFP, multiple years"
+5,Abstract deadline,admission control,2021,,2021;2022;2026,CFP2021 (introduced)
+6,AC desk-reject flagging authority,admission control,2021,,2021;2022;2023,ACGuide2021
+7,OpenReview profile + DBLP requirement,admission control,2022,,2022,ReviewerGuide2022
+8,Author list lock after abstract deadline,admission control,2022,,2022,CFP2022
+9,Reviewer qualification gate (mentored onboarding),admission control,2022,2022,2022,blog2022 mentorship post
+10,Mandatory reciprocal reviewing,admission control,2025,,2025;2026,CFP2025 (introduced)
+11,Qualified-reviewer quota per submission,admission control,2025,,2025,CFP2025
+12,Mandatory LLM use disclosure,admission control,2026,,2026,blog2025-08-26
+13,Desk rejection for hallucinated citations (dual human review),admission control,2026,,2026,blog2026-03-31
+14,Two-round review structure,monitoring,2017,2017,2017,CFP2017
+15,Automated revision diff (pdfdiff),automation,2018,,2018;2019;2020;2021;2022;2023;2024,"CFP, multiple years"
+16,Violation flagging rules to AC,monitoring,2019,,2019;2020,ReviewerGuide2019
+17,arXiv 30-day prior-work rule,monitoring,2019,2020,2019;2020,ReviewerGuide2019
+18,Staged discussion with phase tags,monitoring,2020,2021,2020;2021,ACGuide2020/2021
+19,"Rating scale reform (asymmetric, no neutral)",monitoring,2020,,2020,PCblog2020
+20,Optional code submission field,monitoring,2020,,2020,CFP2020
+21,Mandatory per-paper Code of Ethics report,monitoring,2021,,2021;2022;2023;2024;2025,"ReviewerGuide, multiple years"
+22,Dedicated AC assignment-vetting stage,monitoring,2022,,2022,ACGuide2022
+23,Borderline-paper AC-reviewer video meetings,monitoring,2023,2025,2023;2024;2025,ACGuide2023
+24,Official tracking of score shifts during discussion,monitoring,2023,,2023;2025,"FactSheet, multiple years"
+25,Post-hoc automated collusion/plagiarism screening,monitoring,2024,,2024,blog2024-05-06
+26,Two LLM review detectors on all reviews,monitoring,2026,,2026,blog2026-03-31
+27,LLM content detection flags on submissions,monitoring,2026,,2026,blog2025-11-19
+28,Automated citation verification system,monitoring,2026,,2026,blog2026-03-31
+29,Best Review / Top Reviewer recognition,feedback,2017,,2017;2018;2021;2022;2023,"CFP/Guide, multiple years"
+30,Proactive AC intervention + meta-review template,feedback,2019,,2019;2020;2021;2023,"ACGuide, multiple years"
+31,Emergency/substitute reviewer system,feedback,2019,,2019;2020;2021;2022,"ACGuide, multiple years"
+32,AC buddy cross-checking of meta-reviews,feedback,2020,2020,2020,ACGuide2020
+33,PC/AC calibration period,feedback,2020,2021,2020;2021,ACGuide2020/2021
+34,New-reviewer mentorship with iterative feedback,feedback,2022,2022,2022,blog2022-03-18
+35,Three-working-day response rule in discussion,feedback,2022,,2022,ReviewerGuide2022
+36,Review Feedback Agent (LLM feedback pilot),feedback,2025,2025,2025,blog2024-10-09/2025-04-15
+37,Low-quality review warnings and revision prompts,feedback,2026,,2026,ReviewerGuide2026
+38,Confidential author channel for reporting poor reviews,feedback,2026,,2026,blog2025-11-19
+39,Withdrawal de-anonymization and permanent listing,sanction,2018,,2018;2019;2020;2021;2024,"CFP, multiple years"
+40,Soft penalty for over-length submissions,sanction,2019,2020,2019;2020,CFP2019
+41,Meeting-absence recording and review down-weighting,sanction,2023,2023,2023,ACGuide2023
+42,Dedicated misconduct committee,sanction,2024,,2024,blog2024-05-06
+43,Reciprocal-reviewing failure leads to submission desk reject,sanction,2025,,2025;2026,CFP2025
+44,Late reviews hide own reviews during rebuttal,sanction,2026,,2026,ReviewerGuide2026
+45,Uncorrected low-quality review leads to own-submission desk reject,sanction,2026,,2026,ReviewerGuide2026
+46,Repeat offenders removed from reviewer pool,sanction,2026,,2026,blog2025-11-19
+47,Affinity-based automated assignment,automation,2021,,2021;2022;2023;2024,"blog/Guide, multiple years"
+48,Automated conflict-of-interest detection,automation,2021,,2021;2022;2024,"ReviewerGuide, multiple years"
+49,OpenReview public platform hosting,automation,2017,,2017;2018;2019;2020;2021;2022;2023;2024;2025;2026,platform fact
+50,"LLM authoring clause (allowed, full author responsibility)",admission control,2024,,2024;2025;2026,CFP2024起

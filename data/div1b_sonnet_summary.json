@@ -1,0 +1,60 @@
+{
+ "experiment": "DIV1b_unconfound_grid",
+ "engine": "sonnet",
+ "rates": {
+  "k0_N40": {
+   "give": 0.833,
+   "n": 24
+  },
+  "k0_N200": {
+   "give": 0.708,
+   "n": 24
+  },
+  "k0_N1000": {
+   "give": 0.583,
+   "n": 24
+  },
+  "k1_N40": {
+   "give": 1.0,
+   "n": 24
+  },
+  "k1_N200": {
+   "give": 1.0,
+   "n": 24
+  },
+  "k1_N1000": {
+   "give": 1.0,
+   "n": 24
+  },
+  "k5_N40": {
+   "give": 1.0,
+   "n": 24
+  },
+  "k5_N200": {
+   "give": 1.0,
+   "n": 24
+  },
+  "k5_N1000": {
+   "give": 1.0,
+   "n": 24
+  },
+  "k25_N40": {
+   "give": 0.0,
+   "n": 24
+  },
+  "k25_N200": {
+   "give": 0.958,
+   "n": 24
+  },
+  "k25_N1000": {
+   "give": 1.0,
+   "n": 24
+  }
+ },
+ "anti_diagonal_2.5pct": {
+  "k1_N40": 1.0,
+  "k5_N200": 1.0,
+  "k25_N1000": 1.0
+ },
+ "registered_analysis": "GLM in sandbox; signatures (a)-(d) per \u5b9e\u9a8c\u8ba1\u5212.md DIV-1b"
+}

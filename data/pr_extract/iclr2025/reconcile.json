@@ -1,0 +1,21 @@
+{
+ "venue": "iclr2025",
+ "t": "2026-07-21T15:16:07.544699+00:00",
+ "submissions_jsonl": 11672,
+ "reviews_jsonl": 46748,
+ "edit_records_jsonl": 39450,
+ "forums_done": 11672,
+ "reviews_edits_done": 46748,
+ "anchors": {
+  "submissions_total": 11672,
+  "non_desk_rejected": 11553,
+  "reviews_thakkar": 44831
+ },
+ "status_counts": {
+  "withdrawn": 2990,
+  "rejected_public": 4909,
+  "accepted": 3703,
+  "desk_rejected": 70,
+  "unique_roots": 11672
+ }
+}

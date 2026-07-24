@@ -1,0 +1,187 @@
+{
+ "dev_2025": {
+  "n_dev_areas": 10,
+  "n_dev_forums": 7263,
+  "n_dev_reviews": 29045,
+  "system_edit_records_excluded": 15940,
+  "caveat": "2025 revision stats include ~50% agent-induced component (Thakkar); descriptive only",
+  "M1_revision_rate": 0.2701,
+  "M2_first_revision_delay_days": {
+   "n": 7845,
+   "median": 24.8,
+   "q25": 21.88,
+   "q75": 29.04
+  },
+  "M3_reviewer_edit_timing": {
+   "after_discussion": 3430,
+   "discussion_period": 5470,
+   "feedback_window_post_ddl": 156,
+   "before_review_ddl": 1
+  },
+  "S1_clustering": {
+   "n": 29045,
+   "share_last72h_of_predeadline": 0.5934,
+   "share_last24h_of_predeadline": 0.3316,
+   "late_share": 0.1568
+  },
+  "S2_area_table": {
+   "alignment, fairness, safety, privacy, and societal considerations": {
+    "n_reviews": 4225,
+    "n_submissions": 1048,
+    "clust72": 0.5861
+   },
+   "applications to computer vision, audio, language, and other modalities": {
+    "n_reviews": 5528,
+    "n_submissions": 1373,
+    "clust72": 0.5941
+   },
+   "applications to physical sciences (physics, chemistry, biology, etc.)": {
+    "n_reviews": 2204,
+    "n_submissions": 543,
+    "clust72": 0.5918
+   },
+   "applications to robotics, autonomy, planning": {
+    "n_reviews": 973,
+    "n_submissions": 244,
+    "clust72": 0.6236
+   },
+   "generative models": {
+    "n_reviews": 4278,
+    "n_submissions": 1063,
+    "clust72": 0.603
+   },
+   "learning theory": {
+    "n_reviews": 1460,
+    "n_submissions": 365,
+    "clust72": 0.6085
+   },
+   "optimization": {
+    "n_reviews": 2029,
+    "n_submissions": 521,
+    "clust72": 0.6004
+   },
+   "other topics in machine learning (i.e., none of the above)": {
+    "n_reviews": 2229,
+    "n_submissions": 562,
+    "clust72": 0.6105
+   },
+   "reinforcement learning": {
+    "n_reviews": 2661,
+    "n_submissions": 676,
+    "clust72": 0.5723
+   },
+   "unsupervised, self-supervised, semi-supervised, and supervised representation learning": {
+    "n_reviews": 3458,
+    "n_submissions": 868,
+    "clust72": 0.5766
+   }
+  },
+  "S2_spearman_subs_vs_clust72": {
+   "rho": -0.491,
+   "p": 0.15,
+   "n_areas": 10
+  },
+  "D_demand": {
+   "alignment, fairness, safety, privacy, and societal considerations": {
+    "D1_submissions": 1048,
+    "D2_share_of_dev": 0.1443
+   },
+   "applications to computer vision, audio, language, and other modalities": {
+    "D1_submissions": 1373,
+    "D2_share_of_dev": 0.189
+   },
+   "applications to physical sciences (physics, chemistry, biology, etc.)": {
+    "D1_submissions": 543,
+    "D2_share_of_dev": 0.0748
+   },
+   "applications to robotics, autonomy, planning": {
+    "D1_submissions": 244,
+    "D2_share_of_dev": 0.0336
+   },
+   "generative models": {
+    "D1_submissions": 1063,
+    "D2_share_of_dev": 0.1464
+   },
+   "learning theory": {
+    "D1_submissions": 365,
+    "D2_share_of_dev": 0.0503
+   },
+   "optimization": {
+    "D1_submissions": 521,
+    "D2_share_of_dev": 0.0717
+   },
+   "other topics in machine learning (i.e., none of the above)": {
+    "D1_submissions": 562,
+    "D2_share_of_dev": 0.0774
+   },
+   "reinforcement learning": {
+    "D1_submissions": 676,
+    "D2_share_of_dev": 0.0931
+   },
+   "unsupervised, self-supervised, semi-supervised, and supervised representation learning": {
+    "D1_submissions": 868,
+    "D2_share_of_dev": 0.1195
+   }
+  }
+ },
+ "tmlr": {
+  "n_reviews": 21454,
+  "max_7day_window_share": 0.0124,
+  "span_days": 1573.0
+ },
+ "iclr2025_all_for_window_contrast": {
+  "n_reviews": 46748,
+  "max_7day_window_share": 0.7289
+ },
+ "M4_dev_2025": {
+  "n_multi_edit_reviews": 902,
+  "n_inter_edit_deltas": 1212,
+  "scope_note": "inter-edit only; magnitude vs pre-publication original unmeasurable publicly",
+  "signed_delta_words": {
+   "median": 0,
+   "q25": 0,
+   "q75": 0
+  },
+  "share_growing": 0.1749,
+  "mean_abs_delta": 9.4
+ },
+ "year_2024": {
+  "n_reviews": 28028,
+  "M1": 0.216,
+  "M2_median_days": 22.53,
+  "M3": {
+   "discussion": 4933,
+   "after": 2148
+  },
+  "S1": {
+   "share_last72h": 0.7004,
+   "share_last24h": 0.362,
+   "late_share": 0.271
+  },
+  "note": "2024 无反馈 agent；讨论期 11-10..11-22"
+ },
+ "case_2026": {
+  "n_reviews": 75859,
+  "S1": {
+   "share_last72h": 0.5423,
+   "share_last24h": 0.0642,
+   "late_share": 0.1218
+  },
+  "reviewer_edits_by_window": {
+   "fuzzy": 2,
+   "post": 1,
+   "clean": 1
+  },
+  "system_edits_by_window": {
+   "fuzzy": 75176
+  },
+  "daily_reviewer_edits_day0_is_1111": {
+   "-10": 1,
+   "1": 2,
+   "36": 1
+  },
+  "daily_system_edits_day0_is_1111": {
+   "1": 75176
+  }
+ }
+}

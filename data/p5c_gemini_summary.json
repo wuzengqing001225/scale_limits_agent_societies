@@ -1,0 +1,40 @@
+{
+ "experiment": "P5c_crossarch",
+ "engine": "gemini",
+ "model_requested": "gemini-3.5-flash",
+ "models_resolved": [
+  "gemini-3.5-flash"
+ ],
+ "rates": {
+  "P1_B": {
+   "give": 1.0,
+   "n": 24
+  },
+  "P1_T": {
+   "give": 0.0,
+   "n": 24
+  },
+  "P1_X": {
+   "give": 1.0,
+   "n": 24
+  },
+  "P2_count_1000": {
+   "give": 0.0,
+   "n": 24
+  },
+  "P2_prop_1000": {
+   "give": 0.042,
+   "n": 24
+  },
+  "P2_prop_8": {
+   "give": 0.0,
+   "n": 24
+  }
+ },
+ "invalid": 0,
+ "classification": {
+  "conditional_structure": true,
+  "proportion_type": "testimony_as_evidence"
+ },
+ "registered_readings": "see \u5b9e\u9a8c\u8ba1\u5212.md \u00a710 P5c (1)-(4)"
+}

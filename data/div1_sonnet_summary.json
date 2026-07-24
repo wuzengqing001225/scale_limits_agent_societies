@@ -1,0 +1,51 @@
+{
+ "experiment": "DIV1_divergence",
+ "engine": "sonnet",
+ "rates": {
+  "B_N8": {
+   "give": 1.0,
+   "n": 24
+  },
+  "B_N40": {
+   "give": 0.958,
+   "n": 24
+  },
+  "B_N200": {
+   "give": 0.792,
+   "n": 24
+  },
+  "B_N1000": {
+   "give": 0.792,
+   "n": 24
+  },
+  "T_N8": {
+   "give": 0.583,
+   "n": 24
+  },
+  "T_N40": {
+   "give": 1.0,
+   "n": 24
+  },
+  "T_N200": {
+   "give": 1.0,
+   "n": 24
+  },
+  "T_N1000": {
+   "give": 1.0,
+   "n": 24
+  }
+ },
+ "Delta_by_N": {
+  "N8": 0.417,
+  "N40": -0.042,
+  "N200": -0.208,
+  "N1000": -0.208
+ },
+ "sealed_verdicts": {
+  "T_flat_spread_lt_0.15": false,
+  "Delta_flat_spread_lt_0.15": false,
+  "Delta_positive_all_N": false,
+  "flat_change_le_0.15": false
+ },
+ "registration": "\u5b9e\u9a8c\u8ba1\u5212.md DIV-1 (2026-07-20)"
+}

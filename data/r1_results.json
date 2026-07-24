@@ -1,0 +1,84 @@
+{
+ "experiment": "R1_d2_midrange",
+ "target_band": [
+  0.7,
+  0.88
+ ],
+ "calibration": [
+  {
+   "p_punish": 0.2,
+   "punish_effect": 0.01,
+   "reversion": 0.01,
+   "give_N100": 0.7989
+  },
+  {
+   "p_punish": 0.2,
+   "punish_effect": 0.015,
+   "reversion": 0.01,
+   "give_N100": 0.8344
+  },
+  {
+   "p_punish": 0.2,
+   "punish_effect": 0.005,
+   "reversion": 0.01,
+   "give_N100": 0.7445
+  },
+  {
+   "p_punish": 0.5,
+   "punish_effect": 0.005,
+   "reversion": 0.01,
+   "give_N100": 0.8179
+  }
+ ],
+ "chosen": {
+  "p_punish": 0.2,
+  "punish_effect": 0.01,
+  "reversion": 0.01
+ },
+ "rows": [
+  {
+   "N": 10,
+   "base": 0.6423,
+   "d2": 0.7985,
+   "lift": 0.1562,
+   "punish_rate": 0.1995
+  },
+  {
+   "N": 30,
+   "base": 0.6599,
+   "d2": 0.7993,
+   "lift": 0.1394,
+   "punish_rate": 0.2007
+  },
+  {
+   "N": 100,
+   "base": 0.6585,
+   "d2": 0.799,
+   "lift": 0.1405,
+   "punish_rate": 0.1999
+  },
+  {
+   "N": 300,
+   "base": 0.658,
+   "d2": 0.7991,
+   "lift": 0.1411,
+   "punish_rate": 0.2001
+  },
+  {
+   "N": 1000,
+   "base": 0.653,
+   "d2": 0.7991,
+   "lift": 0.146,
+   "punish_rate": 0.1998
+  },
+  {
+   "N": 3000,
+   "base": 0.649,
+   "d2": 0.7989,
+   "lift": 0.1499,
+   "punish_rate": 0.1999
+  }
+ ],
+ "lift_spread": 0.0168,
+ "R1_P_pass": true
+}

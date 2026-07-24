@@ -1,0 +1,57 @@
+{
+ "experiment": "P6b_jump_wording_retest",
+ "model": "opus",
+ "cells": {
+  "w0_k0_N1000": {
+   "give": 1.0,
+   "n": 24
+  },
+  "w0_k0_N200": {
+   "give": 1.0,
+   "n": 24
+  },
+  "w0_k0_N40": {
+   "give": 1.0,
+   "n": 24
+  },
+  "w1_k1_N1000": {
+   "give": 1.0,
+   "n": 24
+  },
+  "w1_k1_N200": {
+   "give": 1.0,
+   "n": 24
+  },
+  "w1_k1_N40": {
+   "give": 1.0,
+   "n": 24
+  },
+  "w2_k1_N1000": {
+   "give": 1.0,
+   "n": 24
+  },
+  "w2_k1_N200": {
+   "give": 1.0,
+   "n": 24
+  },
+  "w2_k1_N40": {
+   "give": 1.0,
+   "n": 24
+  }
+ },
+ "pooled": {
+  "w0_k0": {
+   "give": 1.0,
+   "n": 72
+  },
+  "w1_k1": {
+   "give": 1.0,
+   "n": 72
+  },
+  "w2_k1": {
+   "give": 1.0,
+   "n": 72
+  }
+ },
+ "registered_readings": "Delta=give(k1,w)-give(k0); see \u5b9e\u9a8c\u8ba1\u5212.md \u00a710 (a)-(c) / opus arm"
+}

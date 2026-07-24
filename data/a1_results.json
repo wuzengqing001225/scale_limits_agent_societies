@@ -1,0 +1,108 @@
+{
+ "experiment": "A1_adversarial",
+ "SEEDS": 40,
+ "attacks": {
+  "atk1": {
+   "type": "i",
+   "lift": {
+    "10": 0.0,
+    "100": 0.4615,
+    "1000": 0.92645
+   },
+   "audit_saturation_rounds": {
+    "10": 3.08,
+    "100": 5.6,
+    "1000": 7.0
+   },
+   "audit_note": "effective source count grows endogenously (R0=3>1); coverage f/N degrades but branching saturates informed->1 in ~log_4(N) rounds << T=25. Hidden non-degrading channel = endogenous source multiplication.",
+   "verdict": "resolved: extra non-degrading channel (branching amplification)"
+  },
+  "atk2": {
+   "type": "i",
+   "lift": {
+    "10": 0.2725,
+    "100": 0.25300000000000006,
+    "1000": 0.247
+   },
+   "audit_fracC_final": {
+    "10": 0.7375,
+    "100": 0.7528,
+    "1000": 0.7485
+   },
+   "audit_note": "behavior depends on partner TYPE DENSITY rho_C (N-free mean field rho'=0.3+0.6 rho -> 0.75), NOT on reunion prob 1/(N-1). Effective input is N-independent.",
+   "verdict": "resolved: declared degrading quantity (reunion) is NOT the effective input; effective input (type density) is N-free -> criterion predicts flat, correctly"
+  },
+  "atk3": {
+   "type": "i",
+   "lift": {
+    "10": 0.30000000000000004,
+    "100": 0.35,
+    "1000": 0.325
+   },
+   "audit_fixation_prob": {
+    "10": 0.4,
+    "100": 0.35,
+    "1000": 0.325
+   },
+   "audit_note": "initial freq 1/N degrades, but positive selection s=0.5 amplifies it: fixation prob -> s/(1+s)=1/3 (N-free). Hidden non-degrading channel = selection gradient.",
+   "verdict": "resolved: extra non-degrading channel (selection amplification)"
+  },
+  "atk4": {
+   "type": "ii",
+   "lift": {
+    "10": 1.0,
+    "100": 0.175,
+    "1000": 0.0
+   },
+   "audit_consensus_time": {
+    "10": 13.5,
+    "100": 127.0,
+    "1000": 1311.3
+   },
+   "audit_note": "voter consensus time ~ N (measured); with fixed budget T=50, effective input = (T / consensus_time) ~ 1/N. HIDDEN degrading quantity = fraction of required mixing time available.",
+   "verdict": "resolved: hidden degrading quantity (available-time / mixing-time ~ T/N)"
+  },
+  "atk5": {
+   "type": "ii",
+   "lift_extensive_unanimity": {
+    "10": 0.3,
+    "100": 0.0,
+    "1000": 0.0
+   },
+   "audit_intensive_rate_lift": {
+    "10": 0.395,
+    "100": 0.4027,
+    "1000": 0.4024
+   },
+   "audit_note": "The INTENSIVE per-agent rate lift (give-rate on-off) is flat at ~0.40 for all N. The decaying observable P(all N unanimous)=p^N is EXTENSIVE (multiplicative over N agents) -> log/N = log p is N-invariant. Criterion concerns intensive group-level rates; the extensive observable is a definitional artifact.",
+   "verdict": "out-of-scope: chosen observable is extensive not intensive; intensive rate is N-flat as criterion requires"
+  },
+  "atk6": {
+   "type": "ii",
+   "lift": {
+    "10": 0.61,
+    "100": 0.4715,
+    "1000": 0.20299999999999999
+   },
+   "audit_M_on_by_budget": {
+    "10": {
+     "10": 0.873,
+     "50": 1.0,
+     "200": 1.0
+    },
+    "100": {
+     "10": 0.529,
+     "50": 0.999,
+     "200": 1.0
+    },
+    "1000": {
+     "10": 0.209,
+     "50": 0.978,
+     "200": 1.0
+    }
+   },
+   "audit_note": "DIAGNOSTIC RESULT: at T=50/200 rounds, |M|_on -> ~1.0 for ALL N incl 1000. So dynamics are SUPER-critical (red team mis-labeled sub-critical); mechanism has NO intrinsic N-degradation. The decay at fixed T=10 is because consensus time tau(N) grows with N -> available-time fraction T/tau(N) is the HIDDEN degrading quantity. Same class as atk4.",
+   "verdict": "resolved: hidden degrading quantity (available-time / mixing-time T/tau(N)); NOT a fluctuation floor, confirmed by time-budget sweep"
+  }
+ }
+}

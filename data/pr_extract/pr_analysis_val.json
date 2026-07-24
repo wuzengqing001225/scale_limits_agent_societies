@@ -1,0 +1,140 @@
+{
+ "val_2025_FINAL": {
+  "n_dev_areas": 11,
+  "n_dev_forums": 4409,
+  "n_dev_reviews": 17703,
+  "system_edit_records_excluded": 8513,
+  "caveat": "2025 revision stats include ~50% agent-induced component (Thakkar); descriptive only",
+  "M1_revision_rate": 0.2822,
+  "M2_first_revision_delay_days": {
+   "n": 4995,
+   "median": 24.89,
+   "q25": 21.8,
+   "q75": 29.06
+  },
+  "M3_reviewer_edit_timing": {
+   "discussion_period": 3382,
+   "after_discussion": 2297,
+   "feedback_window_post_ddl": 83
+  },
+  "S1_clustering": {
+   "n": 17703,
+   "share_last72h_of_predeadline": 0.6083,
+   "share_last24h_of_predeadline": 0.3517,
+   "late_share": 0.1665
+  },
+  "S2_area_table": {
+   "applications to neuroscience & cognitive science": {
+    "n_reviews": 855,
+    "n_submissions": 214,
+    "clust72": 0.6085
+   },
+   "causal reasoning": {
+    "n_reviews": 471,
+    "n_submissions": 119,
+    "clust72": 0.626
+   },
+   "datasets and benchmarks": {
+    "n_reviews": 3051,
+    "n_submissions": 760,
+    "clust72": 0.626
+   },
+   "foundation or frontier models, including LLMs": {
+    "n_reviews": 5199,
+    "n_submissions": 1297,
+    "clust72": 0.6269
+   },
+   "infrastructure, software libraries, hardware, systems, etc.": {
+    "n_reviews": 345,
+    "n_submissions": 89,
+    "clust72": 0.6069
+   },
+   "interpretability and explainable AI": {
+    "n_reviews": 2059,
+    "n_submissions": 516,
+    "clust72": 0.6103
+   },
+   "learning on graphs and other geometries & topologies": {
+    "n_reviews": 1759,
+    "n_submissions": 429,
+    "clust72": 0.5742
+   },
+   "learning on time series and dynamical systems": {
+    "n_reviews": 1085,
+    "n_submissions": 270,
+    "clust72": 0.5752
+   },
+   "neurosymbolic & hybrid AI systems (physics-informed, logic & formal reasoning, etc.)": {
+    "n_reviews": 425,
+    "n_submissions": 105,
+    "clust72": 0.6121
+   },
+   "probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.)": {
+    "n_reviews": 961,
+    "n_submissions": 236,
+    "clust72": 0.5808
+   },
+   "transfer learning, meta learning, and lifelong learning": {
+    "n_reviews": 1493,
+    "n_submissions": 374,
+    "clust72": 0.5821
+   }
+  },
+  "S2_spearman_subs_vs_clust72": {
+   "rho": 0.178,
+   "p": 0.601,
+   "n_areas": 11
+  },
+  "D_demand": {
+   "applications to neuroscience & cognitive science": {
+    "D1_submissions": 214,
+    "D2_share_of_dev": 0.0485
+   },
+   "causal reasoning": {
+    "D1_submissions": 119,
+    "D2_share_of_dev": 0.027
+   },
+   "datasets and benchmarks": {
+    "D1_submissions": 760,
+    "D2_share_of_dev": 0.1724
+   },
+   "foundation or frontier models, including LLMs": {
+    "D1_submissions": 1297,
+    "D2_share_of_dev": 0.2942
+   },
+   "infrastructure, software libraries, hardware, systems, etc.": {
+    "D1_submissions": 89,
+    "D2_share_of_dev": 0.0202
+   },
+   "interpretability and explainable AI": {
+    "D1_submissions": 516,
+    "D2_share_of_dev": 0.117
+   },
+   "learning on graphs and other geometries & topologies": {
+    "D1_submissions": 429,
+    "D2_share_of_dev": 0.0973
+   },
+   "learning on time series and dynamical systems": {
+    "D1_submissions": 270,
+    "D2_share_of_dev": 0.0612
+   },
+   "neurosymbolic & hybrid AI systems (physics-informed, logic & formal reasoning, etc.)": {
+    "D1_submissions": 105,
+    "D2_share_of_dev": 0.0238
+   },
+   "probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.)": {
+    "D1_submissions": 236,
+    "D2_share_of_dev": 0.0535
+   },
+   "transfer learning, meta learning, and lifelong learning": {
+    "D1_submissions": 374,
+    "D2_share_of_dev": 0.0848
+   }
+  },
+  "sealed_adjudication": {
+   "A1_S1_last72h_ge_0.27": true,
+   "A2_S2_rho_positive": true,
+   "A3_M1_in_band_0.22_0.32": true
+  }
+ }
+}

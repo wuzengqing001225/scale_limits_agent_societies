@@ -1,0 +1,100 @@
+{
+ "div1b_reasoner": {
+  "b_logk": 0.658,
+  "se_logk": 0.124,
+  "b_logN": -0.482,
+  "se_logN": 0.122,
+  "contrast_b1_plus_b2": 0.176,
+  "contrast_se": 0.154,
+  "cells_2.5pct": [
+   0.667,
+   0.75,
+   0.542
+  ],
+  "spread": 0.208
+ },
+ "div1b_sonnet": {
+  "b_logk": 4.832,
+  "se_logk": 1.275,
+  "b_logN": -4.123,
+  "se_logN": 1.044,
+  "contrast_b1_plus_b2": 0.709,
+  "contrast_se": 1.049,
+  "method": "Firth",
+  "cells_2.5pct": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "spread": 0.0
+ },
+ "p6c_reasoner": {
+  "b_logk": 0.127,
+  "se_logk": 0.115,
+  "b_logN": 0.036,
+  "se_logN": 0.115,
+  "contrast_b1_plus_b2": 0.163,
+  "contrast_se": 0.163,
+  "CI_logN": [
+   -0.189,
+   0.261
+  ],
+  "sealed": {
+   "i_dose_sig": false,
+   "ii_CI_logN_contains_0": true,
+   "iii_antidiag_spread_gt_0.15": true
+  },
+  "cells_2.5pct": [
+   0.333,
+   0.25,
+   0.167
+  ],
+  "spread": 0.166
+ },
+ "p6c_gemini": {
+  "b_logk": 1.115,
+  "se_logk": 0.149,
+  "b_logN": 0.079,
+  "se_logN": 0.128,
+  "contrast_b1_plus_b2": 1.194,
+  "contrast_se": 0.201,
+  "CI_logN": [
+   -0.172,
+   0.33
+  ],
+  "sealed": {
+   "i_dose_sig": true,
+   "ii_CI_logN_contains_0": true,
+   "iii_antidiag_spread_gt_0.15": true
+  },
+  "cells_2.5pct": [
+   0.917,
+   0.458,
+   0.208
+  ],
+  "spread": 0.709
+ },
+ "p6c_gpt55": {
+  "b_logk": 0.362,
+  "se_logk": 0.119,
+  "b_logN": -0.129,
+  "se_logN": 0.116,
+  "contrast_b1_plus_b2": 0.233,
+  "contrast_se": 0.163,
+  "CI_logN": [
+   -0.356,
+   0.098
+  ],
+  "sealed": {
+   "i_dose_sig": true,
+   "ii_CI_logN_contains_0": true,
+   "iii_antidiag_spread_gt_0.15": true
+  },
+  "cells_2.5pct": [
+   0.833,
+   0.625,
+   0.708
+  ],
+  "spread": 0.208
+ }
+}

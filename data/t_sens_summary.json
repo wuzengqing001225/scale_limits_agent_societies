@@ -1,0 +1,29 @@
+{
+ "experiment": "T_sensitivity",
+ "model_requested": "claude-sonnet-5",
+ "models_resolved": [
+  "claude-sonnet-5"
+ ],
+ "rates": {
+  "P1_B_t1.0": {
+   "give": 0.875,
+   "n": 24
+  },
+  "P1_T_t1.0": {
+   "give": 0.0,
+   "n": 22
+  },
+  "P2_count_1000_t1.0": {
+   "give": 0.0,
+   "n": 22
+  }
+ },
+ "verdict": {
+  "t1.0": {
+   "baseline_give": 0.875,
+   "targeted_give": 0.0,
+   "count1000_give": 0.0,
+   "direction_preserved": true
+  }
+ }
+}

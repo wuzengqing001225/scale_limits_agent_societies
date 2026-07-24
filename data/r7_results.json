@@ -1,0 +1,167 @@
+{
+ "experiment": "R7_prospective",
+ "library": "axelrod 4.13.1",
+ "B": 60,
+ "rows": [
+  {
+   "pool": "I_WSLS",
+   "arm": "G",
+   "N": 6,
+   "turns": 12,
+   "delta": -0.7,
+   "coop_rate": 0.35
+  },
+  {
+   "pool": "I_WSLS",
+   "arm": "G",
+   "N": 12,
+   "turns": 5,
+   "delta": -0.7273,
+   "coop_rate": 0.3909
+  },
+  {
+   "pool": "I_WSLS",
+   "arm": "G",
+   "N": 24,
+   "turns": 3,
+   "delta": -0.7826,
+   "coop_rate": 0.413
+  },
+  {
+   "pool": "I_WSLS",
+   "arm": "G",
+   "N": 48,
+   "turns": 1,
+   "delta": -1.5745,
+   "coop_rate": 0.5
+  },
+  {
+   "pool": "I_WSLS",
+   "arm": "G",
+   "N": 96,
+   "turns": 1,
+   "delta": -1.5368,
+   "coop_rate": 0.5
+  },
+  {
+   "pool": "I_WSLS",
+   "arm": "S",
+   "N": 6,
+   "turns": 6,
+   "delta": -0.7,
+   "coop_rate": 0.35
+  },
+  {
+   "pool": "I_WSLS",
+   "arm": "S",
+   "N": 12,
+   "turns": 6,
+   "delta": -0.4545,
+   "coop_rate": 0.3636
+  },
+  {
+   "pool": "I_WSLS",
+   "arm": "S",
+   "N": 24,
+   "turns": 6,
+   "delta": -0.3478,
+   "coop_rate": 0.3696
+  },
+  {
+   "pool": "I_WSLS",
+   "arm": "S",
+   "N": 48,
+   "turns": 6,
+   "delta": -0.2979,
+   "coop_rate": 0.3723
+  },
+  {
+   "pool": "I_WSLS",
+   "arm": "S",
+   "N": 96,
+   "turns": 6,
+   "delta": -0.2737,
+   "coop_rate": 0.3737
+  },
+  {
+   "pool": "II_Grudger",
+   "arm": "G",
+   "N": 6,
+   "turns": 12,
+   "delta": 0.55,
+   "coop_rate": 0.225
+  },
+  {
+   "pool": "II_Grudger",
+   "arm": "G",
+   "N": 12,
+   "turns": 5,
+   "delta": 0.3636,
+   "coop_rate": 0.2818
+  },
+  {
+   "pool": "II_Grudger",
+   "arm": "G",
+   "N": 24,
+   "turns": 3,
+   "delta": 0.087,
+   "coop_rate": 0.3261
+  },
+  {
+   "pool": "II_Grudger",
+   "arm": "G",
+   "N": 48,
+   "turns": 1,
+   "delta": -1.5745,
+   "coop_rate": 0.5
+  },
+  {
+   "pool": "II_Grudger",
+   "arm": "G",
+   "N": 96,
+   "turns": 1,
+   "delta": -1.5368,
+   "coop_rate": 0.5
+  },
+  {
+   "pool": "II_Grudger",
+   "arm": "S",
+   "N": 6,
+   "turns": 6,
+   "delta": 0.3,
+   "coop_rate": 0.25
+  },
+  {
+   "pool": "II_Grudger",
+   "arm": "S",
+   "N": 12,
+   "turns": 6,
+   "delta": 0.4545,
+   "coop_rate": 0.2727
+  },
+  {
+   "pool": "II_Grudger",
+   "arm": "S",
+   "N": 24,
+   "turns": 6,
+   "delta": 0.5217,
+   "coop_rate": 0.2826
+  },
+  {
+   "pool": "II_Grudger",
+   "arm": "S",
+   "N": 48,
+   "turns": 6,
+   "delta": 0.5532,
+   "coop_rate": 0.2872
+  },
+  {
+   "pool": "II_Grudger",
+   "arm": "S",
+   "N": 96,
+   "turns": 6,
+   "delta": 0.5684,
+   "coop_rate": 0.2895
+  }
+ ]
+}

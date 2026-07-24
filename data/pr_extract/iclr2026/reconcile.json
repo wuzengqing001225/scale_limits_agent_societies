@@ -1,0 +1,13 @@
+{
+ "venue": "iclr2026",
+ "submissions_jsonl": 19814,
+ "reviews_jsonl": 75859,
+ "edit_records_jsonl": 75371,
+ "status_counts": {
+  "rejected_public": 8359,
+  "withdrawn": 5196,
+  "desk_rejected": 908,
+  "accepted": 5351,
+  "unique_roots": 19814
+ }
+}

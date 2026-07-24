@@ -1,0 +1,55 @@
+{
+ "experiment": "R6_board_vs_organic",
+ "rows": [
+  {
+   "N": 10,
+   "arm": "organic",
+   "base": 0.642,
+   "give": 0.2552,
+   "lift": -0.3868,
+   "coverage": 0.7544
+  },
+  {
+   "N": 10,
+   "arm": "board",
+   "base": 0.642,
+   "give": 0.1652,
+   "lift": -0.4768,
+   "coverage": 0.9291
+  },
+  {
+   "N": 100,
+   "arm": "organic",
+   "base": 0.6587,
+   "give": 0.5878,
+   "lift": -0.0709,
+   "coverage": 0.1345
+  },
+  {
+   "N": 100,
+   "arm": "board",
+   "base": 0.6587,
+   "give": 0.1699,
+   "lift": -0.4888,
+   "coverage": 0.9279
+  },
+  {
+   "N": 1000,
+   "arm": "organic",
+   "base": 0.6532,
+   "give": 0.6466,
+   "lift": -0.0066,
+   "coverage": 0.0132
+  },
+  {
+   "N": 1000,
+   "arm": "board",
+   "base": 0.6532,
+   "give": 0.168,
+   "lift": -0.4852,
+   "coverage": 0.9286
+  }
+ ],
+ "R6_P1_pass": true,
+ "R6_P2_pass": true
+}

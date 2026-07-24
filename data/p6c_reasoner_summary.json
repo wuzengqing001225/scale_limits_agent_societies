@@ -1,0 +1,61 @@
+{
+ "experiment": "P6c_count_grid",
+ "engine": "reasoner",
+ "wording": "W3",
+ "rates": {
+  "k0_N1000": {
+   "give": 0.875,
+   "n": 24
+  },
+  "k0_N200": {
+   "give": 0.75,
+   "n": 24
+  },
+  "k0_N40": {
+   "give": 0.667,
+   "n": 24
+  },
+  "k1_N1000": {
+   "give": 0.292,
+   "n": 24
+  },
+  "k1_N200": {
+   "give": 0.5,
+   "n": 24
+  },
+  "k1_N40": {
+   "give": 0.333,
+   "n": 24
+  },
+  "k25_N1000": {
+   "give": 0.167,
+   "n": 24
+  },
+  "k25_N200": {
+   "give": 0.5,
+   "n": 24
+  },
+  "k25_N40": {
+   "give": 0.208,
+   "n": 24
+  },
+  "k5_N1000": {
+   "give": 0.174,
+   "n": 23
+  },
+  "k5_N200": {
+   "give": 0.25,
+   "n": 24
+  },
+  "k5_N40": {
+   "give": 0.167,
+   "n": 24
+  }
+ },
+ "anti_diagonal_2.5pct": {
+  "k1_N40": 0.333,
+  "k5_N200": 0.25,
+  "k25_N1000": 0.167
+ },
+ "sealed_criteria": "(i) b_logk>0 sig; (ii) CI(b_logN) contains 0; (iii) anti-diagonal spread > 0.15 \u2014 GLM in sandbox"
+}
