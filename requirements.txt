@@ -1,0 +1,7 @@
+numpy>=1.24
+scipy>=1.10
+statsmodels>=0.14
+pandas>=2.0
+matplotlib>=3.7
+openreview-py>=1.40
+diptest>=0.6  # optional, PR-1 recomputation
